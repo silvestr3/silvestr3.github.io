@@ -9,7 +9,6 @@ header#navigation {
     & > a {
         font: 400 2rem/1.5 var(--ff-title);
 
-
         &:hover {
             color: var(--font-color-primary);
         }
@@ -17,12 +16,25 @@ header#navigation {
 
     & nav {
         display: flex;
+        align-items: center;
         gap: 2rem;
 
         & a {
             position: relative;
 
-            &::before {
+            &[download] {
+                background-color: var(--action);
+                color: var(--bg-primary);
+                padding: .5rem 1rem;
+                border-radius: 5rem;
+                transition: border-radius 200ms;
+
+                &:hover {
+                    border-radius: .5rem;
+                }
+            }
+
+            &:not([download])::before {
                 content: "";
                 position: absolute;
                 background-color: var(--action);
@@ -39,7 +51,7 @@ header#navigation {
                 transform: scaleX(1);
             }
 
-            &:hover {
+            &:not([download]):hover {
                 color: var(--font-color-primary);
             }
         }
@@ -47,7 +59,7 @@ header#navigation {
 }
 
 
-@media (width <= 40em) {
+@media (width <= 60em) {
     header#navigation {
         padding: 1rem;
 

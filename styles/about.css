@@ -13,6 +13,22 @@ section#about {
         & .text {
             width: 50%;
 
+            & a[download] {
+                display: inline-block;
+                margin-left: auto;
+                margin-block: 2rem;
+                background-color: var(--action);
+                color: var(--bg-primary);
+                padding: .5rem 1rem;
+                border-radius: 5rem;
+
+                transition: border-radius 200ms;
+
+                &:hover {
+                    border-radius: .5rem;
+                }
+            }
+
             & h3 {
                 margin-bottom: 2rem;
             }

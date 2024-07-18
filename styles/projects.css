@@ -15,6 +15,7 @@ section#projects {
             border-radius: 1rem;
             padding: 5rem 2rem;
             position: relative;
+            width: 100%;
 
             & span {
                 position: absolute;
@@ -40,12 +41,13 @@ section#projects {
 
         & .info {
             text-align: justify;
+            width: 100%;
 
             & .stack {
                 display: flex;
                 gap: .5rem;
                 align-items: center;
-                justify-content: flex-end;
+                justify-content: flex-start;
                 margin-top: 2rem;
 
                 & img {
@@ -85,6 +87,77 @@ section#projects {
                     }
                 }
             }
+
+            & .links {
+                display: flex;
+                gap: 1rem;
+                margin-top: 4rem;
+                align-items: center;
+                
+                
+                & .info {
+                    position: relative;
+                    width: 50%;
+
+                    & img {
+                        width: 1rem;
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(0,-50%);
+                        cursor: pointer;
+                    }
+
+                    & .hidden {
+                        font-size: smaller;
+                        text-align: justify;
+                        width: 100%;
+                        
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(15%,-50%);
+                        
+                        background-color: var(--bg-secondary);
+                        padding: 1rem 1.5rem;
+                        border-radius: 2rem;
+                        
+                        transition: opacity 1s;
+
+                        display: none;
+                        opacity: 0;
+                    }
+
+
+                    & img:hover + .hidden {
+                        display: block;
+                        opacity: 1;
+                    }
+                }
+
+                & a {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    color: var(--action);
+                    position: relative;
+
+                    &:hover::before {
+                        transform: scaleX(1);
+                    }
+
+                    &::before {
+                        content: "";
+                        height: 2px;
+                        position: absolute;
+                        background-color: var(--action);
+                        transition: transform 300ms;
+
+                        transform: scaleX(0);
+                        width: 100%;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
         }
     }
 }
@@ -95,6 +168,14 @@ section#projects {
 
         & .project {
             flex-direction: column;
+        }
+
+        & .project .info .links {
+            margin-top: 2rem;
+
+            & a::before {
+                transform: none;
+            }
         }
     }
 }

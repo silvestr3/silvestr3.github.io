@@ -1,0 +1,52 @@
+section#contact {
+    padding-inline: 6rem;
+    margin-inline: auto;
+    margin-bottom: 12rem;
+    max-width: 80rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & a {
+            color: var(--action);
+            position: relative;
+
+
+            &:hover::before {
+                transform: scaleX(1);
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                transform: scaleX(0);
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                background-color: var(--action);
+                height: 1px;
+
+                transition: transform 300ms;
+            }
+        }
+    }
+}
+
+@media (width <= 60em) {
+    section#contact {
+        padding: 2rem;
+        flex-direction: column;
+        align-items: start;
+        gap: 2rem;
+
+        & .contact-info a::before {
+            transform: none;
+        }
+    }
+}

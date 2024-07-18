@@ -1,0 +1,100 @@
+section#projects {
+    padding-inline: 6.75rem;
+    margin-inline: auto;
+    max-width: 80rem;
+
+    & .project {
+        display: flex;
+        align-items: center;
+        flex-basis: auto;
+        gap: 3rem;
+        margin-top: 5rem;
+
+        & .preview {
+            background-color: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 5rem 2rem;
+            position: relative;
+
+            & span {
+                position: absolute;
+                top: 1.5rem;
+                left: 2rem;
+
+                background-color: var(--bg-primary);
+                padding: .5rem 1rem;
+                border-radius: 2rem;
+                font-size: xx-small;
+                text-transform: uppercase;
+            }
+
+            & img {
+                border-radius: .5rem;
+                transition: transform 300ms;
+            }
+
+            &:hover img {
+                transform: scale(1.2);
+            }
+        }
+
+        & .info {
+            text-align: justify;
+
+            & .stack {
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+                justify-content: flex-end;
+                margin-top: 2rem;
+
+                & img {
+                    width: 2rem;
+                    height: auto;
+                }
+
+                & > div {
+                    position: relative;
+
+                    & img + span {
+                        font-size: small;
+                        width: max-content;
+                        
+                        position: absolute;
+                        left: 50%;
+                        transform: translate(-50%,0);
+
+                        display: none;
+
+                        background-color: var(--bg-secondary);
+                        padding: .5rem 1rem;
+                        border-radius: 2rem;
+                    }
+
+                    & img {
+                        cursor: pointer;
+                        transition: transform 300ms;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+
+                    & img:hover + span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width <= 60em) {
+    section#projects {
+        padding: 2rem;
+
+        & .project {
+            flex-direction: column;
+        }
+    }
+}

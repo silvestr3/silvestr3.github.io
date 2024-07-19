@@ -172,10 +172,6 @@ section#projects {
 
         & .project .info .links {
             margin-top: 2rem;
-
-            & a::before {
-                transform: none;
-            }
         }
     }
 }

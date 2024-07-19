@@ -8,9 +8,11 @@ header#navigation {
 
     & > a {
         font: 400 2rem/1.5 var(--ff-title);
-
+        color: var(--font-color-primary);
+        transition: color 500ms;
+        
         &:hover {
-            color: var(--font-color-primary);
+            color: var(--action);
         }
     }
 
